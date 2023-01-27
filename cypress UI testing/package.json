@@ -1,0 +1,34 @@
+{
+  "name": "cypress-ui-testing",
+  "version": "1.0.0",
+  "main": "cypress.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "update-baseline": "npx cypress run --env updateSnapshots=true --headed",
+    "run-withoutFail": "npx cypress run --env failOnSnapshotDiff=false  --headed",
+    "cypress-open": "npx cypress open",
+    "cypress-run": "npx cypress run"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "cucumber-html-reporter": "^5.3.0",
+    "cypress": "^12.3.0"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true,
+    "cucumberJson":{
+      "generate":true,
+      "outputFolder":"cypress/cucumber-json"
+    }
+  },
+  "devDependencies": {
+    "cypress-cucumber-preprocessor": "^4.3.1",
+    "cypress-image-snapshot": "^4.0.1",
+    "cypress-json-results": "^1.2.1",
+    "mocha": "^10.2.0",
+    "mocha-junit-reporter": "^2.2.0",
+    "mocha-multi-reporters": "^1.5.1"
+  }
+}
